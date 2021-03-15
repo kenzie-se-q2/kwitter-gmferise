@@ -1,7 +1,7 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 
-import Home from "./views/Home";
-import NotFound from "./views/NotFound";
+import Home from './views/Home';
+import NotFound from './views/NotFound';
 
 function App() {
   return (
