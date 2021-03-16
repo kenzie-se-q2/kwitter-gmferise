@@ -18,7 +18,7 @@ export const logoutRequest = (token) => (
 );
 
 export const createUser = (username, displayName, password) => (
-  fetch(`${baseURL}users/user`, {
+  fetch(`${baseURL}users`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
