@@ -17,7 +17,7 @@ export const logoutRequest = (token) => (
   }).then((res) => res.json())
 );
 
-export const createNewUser = (username, displayName, password) => (
+export const createUser = (username, displayName, password) => (
   fetch(`${baseURL}Users/createUser`, {
     method: 'POST',
     headers: { 'Content-Type' : 'application/json' },
@@ -25,6 +25,17 @@ export const createNewUser = (username, displayName, password) => (
       username,
       displayName,
       password,
+    }),
+  }).then((res) => res.json())
+);
+
+export const updateUser = (username, password, displayName) => (
+  fetch(`${baseURL}Users/${username}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type' : 'applictation/json' },
+    body: JSON.stringify({
+      password, 
+      displayName,
     }),
   }).then((res) => res.json())
 );
