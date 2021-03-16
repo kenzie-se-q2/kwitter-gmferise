@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import { loginRequest } from "../fetchRequests";
+import React, { useState } from 'react';
+import { loginRequest } from '../apis/social';
 
-import { LOGIN, useStore } from "../store/store";
+import { LOGIN, useStore } from '../store/store';
 
-function Login(props){
+function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
 
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   });
 
   const handleLogin = (e) => {
     e.preventDefault();
-    loginRequest(formData.username, formData.password).then((userData) =>
-      dispatch({ type: LOGIN, payload: userData })
-    );
+    loginRequest(formData.username, formData.password)
+      .then((userData) => dispatch({ type: LOGIN, payload: userData }));
   };
 
   const handleChange = (e) => {
@@ -48,6 +47,6 @@ function Login(props){
       </form>
     </>
   );
-};
+}
 
 export default Login;
