@@ -42,7 +42,7 @@ export const updateUser = (username, password, displayName, token) => (
   }).then((res) => res.json())
 );
 
-export const deleteUser = (username) => (
+export const deleteUser = (username, token) => (
   fetch(`${baseURL}Users/${username}`, {
     method: 'DELETE',
     header: { Authorization : `Bearer ${token}`}
