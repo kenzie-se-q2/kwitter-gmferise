@@ -4,10 +4,11 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Login from './components/Login';
 import 'semantic-ui-css/semantic.min.css';
-
+import Navigation from "./components/Navigation"
 function App() {
   return (
     <div className="App">
+      <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" render={() => <Login />} />
