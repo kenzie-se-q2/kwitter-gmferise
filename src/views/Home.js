@@ -9,6 +9,9 @@ function Home(props) {
     <>
       <Menu />
       {!user.token && <Redirect to="/login" />}
+      <hr />
+      <MessageList />
+      <input />
     </>
   );
 }

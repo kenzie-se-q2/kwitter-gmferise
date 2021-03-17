@@ -1,0 +1,53 @@
+#login-form {
+    text-align: center;
+    margin: auto;
+    color: var(--main-color);
+}
+
+#login-form > h1 {
+    width: 50%;
+    margin: 20px auto;
+    height: 45px;
+    color: var(--main-color);
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+#login-form > form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#login-form > form > * {
+    margin-top: 30px;
+}
+
+#login-form > form input {
+    margin: 5px;
+    height: 25px;
+    border-color: var(--main-color);
+    background-color: transparent;
+}
+
+#login-form > form input[type="submit"] {
+    margin-top: 35px;
+    width: 120px;
+    height: 45px;
+    color: var(--main-color);
+    border-radius: var(--border-radius);
+}
+
+hr {
+    margin: 70px;
+    border-color: var(--main-color);
+}
+
+#create-account {
+    width: 120px;
+    height: 45px;
+    color: var(--main-color);
+    border-color: var(--main-color);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+}
