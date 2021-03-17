@@ -4,8 +4,7 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "airbnb"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -20,7 +19,7 @@
     "rules": {
 		"brace-style": ["error", "stroustrup"],
 		"func-style": "off",
-		"linebreak-style": ["warn", "windows"],
+		"linebreak-style": "off",
 		"no-unused-vars": "warn",
 		"no-plusplus": "off",
 		"max-classes-per-file": "off",
@@ -36,8 +35,7 @@
 		"react/jsx-no-undef": "off",
 		"react/forbid-prop-types": "off",
 		"react/jsx-props-no-spreading": "off",
-		"react/jsx-filename-extension": "off",
-		"jsx-a11y/label-has-associated-control": "off",
-		"jsx-a11y/no-autofocus": "off"
+		"react/jsx-filename-extension": "off"
+		
     }
 }
