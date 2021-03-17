@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { loginRequest } from '../apis/social';
-import '../assets/login.css';
 import { actions, useStore } from '../store/store';
 
 function Login(props) {

@@ -3,6 +3,7 @@ import MessageList from './components/MessageList';
 import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Login from './components/Login';
+import 'semantic-ui-css/semantic.min.css';
 
 function App() {
   return (
