@@ -18,6 +18,8 @@
     ],
     "rules": {
 		"brace-style": ["error", "stroustrup"],
+    "semi": "warn",
+    "quotes": ["warn", "single"],
 		"func-style": "off",
 		"linebreak-style": "off",
 		"no-unused-vars": "warn",
