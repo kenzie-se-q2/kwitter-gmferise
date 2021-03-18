@@ -18,7 +18,7 @@ const NewAccount = (props) => {
           </Form.Field>
           <Form.Field>
             <label>Password</label>
-            <input placeholder='Password' />
+            <input type="password" placeholder='Password' />
           </Form.Field>
         
           <Button type='submit'>Submit</Button>
