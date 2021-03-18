@@ -1,0 +1,41 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+		"brace-style": ["error", "stroustrup"],
+		"func-style": "off",
+		"linebreak-style": "off",
+		"no-unused-vars": "warn",
+		"no-plusplus": "off",
+		"max-classes-per-file": "off",
+		"no-param-reassign": "off",
+		"import/extensions": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-one-expression-per-line": "off",
+		"react/destructuring-assignment": "off",
+		"react/prop-types": ["warn", { "skipUndeclared": true }],
+		"react/static-property-placement": ["error", "static public field"],
+		"react/no-unused-state": "warn",
+		"react/no-unused-prop-types": "warn",
+		"react/jsx-no-undef": "off",
+		"react/forbid-prop-types": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-filename-extension": "off"
+		
+    }
+}

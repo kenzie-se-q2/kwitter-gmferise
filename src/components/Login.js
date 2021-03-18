@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import { loginRequest } from "../fetchRequests";
+import React, { useState } from 'react';
+import { loginRequest } from '../apis/social';
+import { actions, useStore } from '../store/store';
 
-import { LOGIN, useStore } from "../store/store";
-
-function Login(props){
+function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
 
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   });
 
   const handleLogin = (e) => {
     e.preventDefault();
-    loginRequest(formData.username, formData.password).then((userData) =>
-      dispatch({ type: LOGIN, payload: userData })
-    );
+    loginRequest(formData.username, formData.password).then((userData) => {
+      dispatch({ type: actions.LOGIN, payload: userData });
+    });
   };
 
   const handleChange = (e) => {
@@ -25,29 +24,36 @@ function Login(props){
   };
 
   return (
-    <>
-      <form id="login-form" onSubmit={handleLogin}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={formData.username}
-          autoFocus
-          required
-          onChange={handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          required
-          onChange={handleChange}
-        />
-        <button type="submit">Login</button>
+    <div id="login-form">
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            autoFocus
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <input type="submit" value="Login" />
       </form>
-    </>
+      <hr />
+      <button id="create-account" type="button">Create New Account</button>
+    </div>
   );
-};
+}
 
 export default Login;
