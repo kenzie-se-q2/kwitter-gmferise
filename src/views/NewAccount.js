@@ -4,7 +4,7 @@ import "../assets/newaccount.css"
 
 const NewAccount = (props) => {
   return (
-    <div style={{height: 'inherit', width: 'inherit', backgroundColor: '#7a7474'}}>
+    <div className="colorbg">
       <div id="newaccount-form">
         <h1>Sign Up</h1>
         <Form>

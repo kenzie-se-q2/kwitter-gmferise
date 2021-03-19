@@ -26,7 +26,7 @@ function Login(props) {
   };
 
   return (
-    <div style={{height: 'inherit', width: 'inherit', backgroundColor: '#7a7474'}}>
+  <div className="colorbg">
       <div id="login-form">
       <h1>Login</h1>
       <Form onSubmit={handleLogin}>

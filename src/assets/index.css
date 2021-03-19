@@ -28,3 +28,8 @@ code {
   height: 99vh;
   border: var(--border);
 }
+.colorbg{
+  height:100vh;
+  width: inherit;
+  background-color: #7a7474;
+}
