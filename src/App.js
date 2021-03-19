@@ -2,10 +2,10 @@ import { Switch, Route } from 'react-router-dom';
 import MessageList from './components/MessageList';
 import Home from './views/Home';
 import NotFound from './views/NotFound';
-import Login from './components/Login';
+import Login from './views/Login';
 import 'semantic-ui-css/semantic.min.css';
 import Navigation from './components/Navigation';
-
+import NewAccount from './views/NewAccount';
 
 
 

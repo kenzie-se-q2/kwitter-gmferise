@@ -21,9 +21,11 @@ const reducer = (state, action) => {
       return { user: action.payload };
     case actions.LOGOUT:
       return { user: initialState.user };
+    case (action.CREATEUSER):
+      return { user: action.payload };
     default:
       return state;
-  }
+    }
 };
 
 // Create useStore hook

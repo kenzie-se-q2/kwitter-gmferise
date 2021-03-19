@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { loginRequest } from '../apis/social';
 import { actions, useStore } from '../store/store';
-import { Button, Form } from 'semantic-ui-react'
-import "../assets/Login.css"
+import { Button, Form } from 'semantic-ui-react';
+import '../assets/Login.css';
 
 function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
