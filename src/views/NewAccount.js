@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Redirect } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react';
-import { createUser } from '../apis/social';
+import { createUser, loginRequest } from '../apis/social';
 import { actions, useStore } from '../store/store';
 import '../assets/newaccount.css';
 
@@ -17,9 +17,11 @@ const NewAccount = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUser(formData.username, formData.displayName, formData.password).then((userData) => {
-      dispatch({type: actions.CREATEUSER, payload: userData});
-    });
+    createUser(formData.username, formData.displayName, formData.password)
+      .then(() => (
+        loginRequest(formData.username, formData.password)
+      ))
+      .then((userData) => dispatch({ type: actions.LOGIN, payload: userData }));
   };
 
   const handleChange = (e) => {
@@ -30,7 +32,7 @@ const NewAccount = (props) => {
   
   return (
     <div className="colorbg">
-      {user.token && <Redirect to="/login" />}
+      {user.token && <Redirect to="/" />}
       <div id="newaccount-form">
         <h1>Sign Up</h1>
         <Form onSubmit={handleSubmit}>            
