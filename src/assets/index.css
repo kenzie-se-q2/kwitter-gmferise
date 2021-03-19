@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
+
 :root {
-  --border: var(--main-color) solid 2px;
   --border-radius: 15px;
   --main-color: blue;
   background-color: black;
+}
+
+h1 {
+  font-family: 'ballet';
 }
 
 body {
@@ -22,4 +27,9 @@ code {
 .App {
   height: 99vh;
   border: var(--border);
+}
+.colorbg{
+  height:100vh;
+  width: inherit;
+  background-color: #7a7474;
 }

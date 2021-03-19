@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { loginRequest } from '../apis/social';
 import { actions, useStore } from '../store/store';
+import { Button, Form } from 'semantic-ui-react'
+import "../assets/Login.css"
 
 function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
@@ -24,10 +26,11 @@ function Login(props) {
   };
 
   return (
-    <div id="login-form">
+  <div className="colorbg">
+      <div id="login-form">
       <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <div>
+      <Form onSubmit={handleLogin}>
+        <Form.Field>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -37,9 +40,9 @@ function Login(props) {
             required
             onChange={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        </Form.Field>
+        <Form.Field>
+        <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
@@ -47,11 +50,12 @@ function Login(props) {
             required
             onChange={handleChange}
           />
-        </div>
-        <input type="submit" value="Login" />
-      </form>
+        </Form.Field>
+        <Button type='submit'>Submit</Button>
+      </Form>
       <hr />
-      <button id="create-account" type="button">Create New Account</button>
+      <Button id="create-account" type="button">Create New Account</Button>
+    </div>
     </div>
   );
 }
