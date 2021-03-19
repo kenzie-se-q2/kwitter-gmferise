@@ -23,7 +23,7 @@ const reducer = (state, action) => {
       return { user: initialState.user };
     default:
       return state;
-  }
+    }
 };
 
 // Create useStore hook
