@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Redirect, Link } from 'react-router-dom';
+
 import { loginRequest } from '../apis/social';
 import { actions, useStore } from '../store/store';
 import { Button, Form } from 'semantic-ui-react';
@@ -6,27 +8,27 @@ import '../assets/Login.css';
 
 function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
+  const user = useStore((state) => state.user);
 
   const [formData, setFormData] = useState({
     username: '',
     password: '',
   });
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const handleLogin = (event) => {
+    event.preventDefault();
     loginRequest(formData.username, formData.password).then((userData) => {
       dispatch({ type: actions.LOGIN, payload: userData });
     });
   };
 
-  const handleChange = (e) => {
-    const inputName = e.target.name;
-    const inputValue = e.target.value;
-    setFormData((state) => ({ ...state, [inputName]: inputValue }));
+  const handleChange = (event) => {
+    setFormData((state) => ({ ...state, [event.target.name]: event.target.value }));
   };
 
   return (
   <div className="colorbg">
+    {user.token && <Redirect to="/" />}
       <div id="login-form">
       <h1>Login</h1>
       <Form onSubmit={handleLogin}>
@@ -51,10 +53,12 @@ function Login(props) {
             onChange={handleChange}
           />
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <Button type="submit">Submit</Button>
       </Form>
       <hr />
-      <Button id="create-account" type="button">Create New Account</Button>
+      <Link to="/signup">
+        <Button id="create-account" type="button">Create New Account</Button>
+      </Link>
     </div>
     </div>
   );

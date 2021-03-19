@@ -45,7 +45,7 @@ const NewAccount = (props) => {
             autoFocus
             required
             onChange={handleChange} 
-            placeholder='Username' />
+            placeholder="Username" />
           </Form.Field>
           <Form.Field>
             <label>Display Name</label>
@@ -56,7 +56,7 @@ const NewAccount = (props) => {
             autoFocus
             required
             onChange={handleChange}
-            placeholder='Display Name' />
+            placeholder="Display Name" />
           </Form.Field>
           <Form.Field>
             <label>Password</label>
@@ -67,11 +67,11 @@ const NewAccount = (props) => {
             autoFocus
             required
             onChange={handleChange}
-            placeholder='Password' />
+            placeholder="Password" />
           </Form.Field>
         
           <Button 
-          type='submit'>Submit</Button>
+          type="submit">Submit</Button>
 
         </Form>
       </div>
