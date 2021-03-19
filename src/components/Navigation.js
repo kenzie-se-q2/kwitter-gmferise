@@ -14,7 +14,7 @@ return(
         <Segment><Container textAlign='center'><Link to="/login">Login</Link></Container></Segment>
       </Grid.Column>
       <Grid.Column width={3}>
-        <Segment><Container textAlign='center'><Link to="/">Create Account</Link></Container></Segment>
+        <Segment><Container textAlign='center'><Link to="/signup">Create Account</Link></Container></Segment>
       </Grid.Column>
     </Grid>
  </Container>
