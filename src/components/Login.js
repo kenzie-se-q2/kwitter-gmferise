@@ -42,7 +42,7 @@ function Login(props) {
           />
         </Form.Field>
         <Form.Field>
-          <label htmlFor="password">Password</label>
+        <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
