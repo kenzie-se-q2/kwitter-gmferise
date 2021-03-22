@@ -12,6 +12,9 @@ import Navigation from './components/Navigation';
 function App() {
   return (
     <div className="App">
+      <Route path="/" render={(routeProps) =>(
+        <Navigation {...routeProps} />
+      )} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
