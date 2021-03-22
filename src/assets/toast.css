@@ -1,0 +1,12 @@
+.toast {
+  position: absolute;
+  z-index: 100;
+  width: 60vw;
+  height: 15vh;
+  left: 20vw;
+  top: 5vh;
+  border-radius: 10px;
+  opacity: 0.5;
+
+  background-color: white;
+}

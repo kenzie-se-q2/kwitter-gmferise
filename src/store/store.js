@@ -7,7 +7,7 @@ const initialState = {
   },
   messages: [],
   toast: {
-    message: '',
+    text: '',
     status: 0,
   },
 };
@@ -17,7 +17,7 @@ export const actions = {
   LOGIN: 'LOGIN',
   /** Log out the current user. No payload. */
   LOGOUT: 'LOGOUT',
-  /** Display a toast. Payload { String message, Number status } */
+  /** Display a toast. Payload { String text, Number status } */
   TOAST: 'TOAST',
 };
 

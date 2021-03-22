@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import '../assets/toast.css';
 
+import { actions, useStore } from '../store/store';
 
 const Toast = () => {
-return(
-  <div className="navBar">
-  <Container textAlign='center'>
-      <Grid columns={3} doubling>
-        <Grid.Column width={3}>
-          <Segment><Container textAlign='center'><Link to="/">Home</Link></Container></Segment>
-        </Grid.Column>
-        <Grid.Column width={3}>
-          <Segment><Container textAlign='center'><Link to="/login">Login</Link></Container></Segment>
-        </Grid.Column>
-        <Grid.Column width={3}>
-          <Segment><Container textAlign='center'><Link to="/signup">Create Account</Link></Container></Segment>
-        </Grid.Column>
-      </Grid>
-  </Container>
-      </div>
+  const toast = useStore((state) => state.toast);
+  const visible = useState(false);
+  
+  const fadeClass = visible ? '' : '';
+
+  // When the toast state changes
+  useEffect(() => {
+
+  }, [toast]);
+
+  return (
+    <div className={`toast toast-${toast.status} ${fadeClass}`}>
+      {toast.text}
+    </div>
   );
 };
 
