@@ -29,7 +29,7 @@ export const createUser = (username, displayName, password) => (
   }).then((res) => res.json())
 );
 
-export const updateUser = (username, password, displayName, token) => (
+export const updateUser = (username, password, displayName, about, token) => (
   fetch(`${baseURL}users/${username}`, {
     method: 'PATCH',
     headers: {
@@ -39,6 +39,7 @@ export const updateUser = (username, password, displayName, token) => (
     body: JSON.stringify({
       password,
       displayName,
+      about,
     }),
   }).then((res) => res.json())
 );
@@ -50,19 +51,19 @@ export const deleteUser = (username, token) => (
   }).then((res) => res.json())
 );
 
-export const setPicture = (username, pictureData, token) => (
-  let formData = new FormData()
-  formData.append('picture', pictureData)
+export const setPicture = (username, pictureData, token) => {
+  let formData = new FormData();
+  formData.append('picture', pictureData);
 
-  fetch(`${baseURL}users/${username}/picture`, {
+  return fetch(`${baseURL}users/${username}/picture`, {
     method: 'PUT',
     headers: { 
       Authorization: `Bearer ${token}`,
       'Content-Type': 'multipart/form-data'
   },
     body: formData,
-  }).then((res) => res.json())
-);
+  }).then((res) => res.json());
+};
 
 export const getPicture = (username) => (
   fetch(`${baseURL}users/${username}/picture`, {
