@@ -50,13 +50,16 @@ export const deleteUser = (username, token) => (
   }).then((res) => res.json())
 );
 
-export const setPicture = (username, formData, token) => (
+export const setPicture = (username, pictureData, token) => (
+  let formData = new FormData()
+  formData.append('picture', pictureData)
+
   fetch(`${baseURL}users/${username}/picture`, {
     method: 'PUT',
     headers: { 
-      'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${token}`,
-    },
+      'Content-Type': 'multipart/form-data'
+  },
     body: formData,
   }).then((res) => res.json())
 );
