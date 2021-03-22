@@ -33,7 +33,7 @@ export const updateUser = (username, password, displayName, token) => (
   fetch(`${baseURL}users/${username}`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'applictation/json',
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
@@ -46,6 +46,65 @@ export const updateUser = (username, password, displayName, token) => (
 export const deleteUser = (username, token) => (
   fetch(`${baseURL}users/${username}`, {
     method: 'DELETE',
-    header: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${token}` },
+  }).then((res) => res.json())
+);
+
+export const setPicture = (username, picture, token) => (
+  fetch(`${baseURL}users/${username}/picture`, {
+    method: 'PUT',
+    headers: { 
+      'Content-Type': 'multipart/form-data',
+      Authorization: `Bearer ${token}`,
+    },
+    body: picture,
+  }).then((res) => res.json())
+);
+
+export const getPicture = (username) => (
+  fetch(`${baseURL}users/${username}/picture`, {
+    method: 'GET',
+  }).then((res) => res.json())
+);
+
+export const createMessage = (message, token) => (
+  fetch(`${baseURL}messages`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({message})
+  }).then((res) => res.json())
+);
+
+export const addLike = (messageId, token) => (
+  fetch(`${baseURL}likes`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: messageId
+  }).then((res) => res.json())
+);
+
+export const removeLike = (likeId, token) => (
+  fetch(`${baseURL}likes/${likeId}`, {
+    method: 'DELETE',
+    headers: {Authorization: `Bearer ${token}`},
+  }).then((res) => res.json())
+);
+
+export const getMessageList = (username, limit, offset) => (
+  fetch(`${baseURL}messages?limit=${limit}&offset=${offset}&username=${username}`, {
+    method: 'GET'
+  }).then((res) => res.json())
+);
+
+export const deleteMessage = (messageId, token) => (
+  fetch(`${baseURL}messages/${messageId}`, {
+    method: 'DELETE',
+    headers: {Authorization: `Bearer ${token}`}
   }).then((res) => res.json())
 );
