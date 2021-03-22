@@ -1,0 +1,43 @@
+.navBar{
+    padding: 0 20px;
+    display: flex;
+    position: relative;
+    height: 50px;
+    justify-content: center;
+    background-color: #718a98;
+}
+
+#nav-link {
+    display: flex;
+    height: 100%;
+}
+
+#nav-link a{
+    height: 100%;
+    color: black;
+    padding: 10px;
+    margin: .5px;
+}
+
+#nav-link a:hover, #back-button:hover {
+    background: #51646f;
+}
+
+#nav-buttons {
+    color: black;
+    padding:0;   
+    background-color: transparent;
+}
+
+#back-button {
+    position: absolute;
+    padding: 15px 30px;
+    height: 100%;
+    left: 0;
+}
+
+#back-button button {
+    padding: 0;
+    color: black;
+    background-color: transparent;
+}
