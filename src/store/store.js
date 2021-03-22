@@ -6,6 +6,10 @@ const initialState = {
     token: '',
   },
   messages: [],
+  toast: {
+    message: '',
+    status: 0,
+  },
 };
 
 export const actions = {
@@ -13,6 +17,8 @@ export const actions = {
   LOGIN: 'LOGIN',
   /** Log out the current user. No payload. */
   LOGOUT: 'LOGOUT',
+  /** Display a toast. Payload { String message, Number status } */
+  TOAST: 'TOAST',
 };
 
 const reducer = (state, action) => {
@@ -21,9 +27,11 @@ const reducer = (state, action) => {
       return { user: action.payload };
     case actions.LOGOUT:
       return { user: initialState.user };
+    case actions.TOAST:
+      return { toast: action.payload };
     default:
       return state;
-    }
+  }
 };
 
 // Create useStore hook
