@@ -6,7 +6,7 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Login from './views/Login';
 import NewAccount from './views/NewAccount';
-
+import Profile from "./views/Profile"
 import Navigation from './components/Navigation';
 
 function App() {
@@ -16,8 +16,9 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={NewAccount} />
+        <Route exact path="/profile" component={Profile} />
         <Route component={NotFound} />
-      </Switch>
+      </Switch>   
     </div>
   );
 }
