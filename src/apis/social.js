@@ -100,8 +100,8 @@ export const removeLike = (likeId, token) => (
   }).then((res) => res.json())
 );
 
-export const getMessageList = (username, limit, offset) => (
-  fetch(`${baseURL}messages?limit=${limit}&offset=${offset}&username=${username}`, {
+export const getMessageList = (limit, offset) => (
+  fetch(`${baseURL}messages?limit=${limit}&offset=${offset}`, {
     method: 'GET'
   }).then((res) => res.json())
 );
