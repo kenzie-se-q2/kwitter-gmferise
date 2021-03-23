@@ -7,7 +7,7 @@ function Messages () {
   <Message compact>
     <div className=""><img /></div>
     <div className=""><Message.Header>DisplayName <br /> @username</Message.Header></div>
-    <div className=""><TextArea placeholder='What is on your mind.....' /></div>
+    <div className=""><p>(put text in here)</p></div>
     <Button as='div' labelPosition='right'>
       <Button icon>
         <Icon name='heart' />

@@ -8,7 +8,6 @@ import Login from './views/Login';
 import NewAccount from './views/NewAccount';
 import Profile from "./views/Profile"
 import Navigation from './components/Navigation';
-import Messages from './components/Messages'
 import Toast from './components/Toast';
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={NewAccount} />
         <Route exact path="/profile" component={Profile} />
-        <Route path="/messages" component={Messages} />
         <Route component={NotFound} />
       </Switch>   
     </div>
