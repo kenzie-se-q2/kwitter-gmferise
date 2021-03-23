@@ -106,13 +106,6 @@ export const getMessageList = (limit, offset) => (
   }).then((res) => res.json())
 );
 
-export const deleteMessage = (messageId, token) => (
-  fetch(`${baseURL}messages/${messageId}`, {
-    method: 'DELETE',
-    headers: {Authorization: `Bearer ${token}`}
-  }).then((res) => res.json())
-);
-
 export const getUser = (username) => (
   fetch(`${baseURL}users/${username}`, {
     method: 'GET',
