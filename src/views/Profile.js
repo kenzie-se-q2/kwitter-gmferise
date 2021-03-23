@@ -26,11 +26,11 @@ function Profile() {
         <Form id="update-user">
           <Form.Field>
             <h4>Display Name</h4>
-            <Input placeholder="Display Name" pattern=".{1,}"/>
+            <Input placeholder="Display Name" pattern=".{3,}"/>
           </Form.Field>
           <Form.Field>
             <h4>About Me</h4>
-            <TextArea placeholder="About" pattern=".{1,}"/>
+            <TextArea placeholder="About" />
           </Form.Field>
           <Button type="submit">Update Profile Info</Button>
         </Form>
