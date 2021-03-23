@@ -45,7 +45,7 @@ const NewAccount = (props) => {
             autoFocus
             required
             onChange={handleChange} 
-            pattern= "{3,}"
+            pattern= ".{3,}"
             placeholder="Username" />
           </Form.Field>
           <Form.Field>
@@ -57,7 +57,7 @@ const NewAccount = (props) => {
             autoFocus
             required
             onChange={handleChange}
-            pattern= "{1,}"
+            pattern= ".{1,}"
             placeholder="Display Name" />
           </Form.Field>
           <Form.Field>
@@ -69,7 +69,7 @@ const NewAccount = (props) => {
             autoFocus
             required
             onChange={handleChange}
-            pattern= "{3,}"
+            pattern= ".{3,}"
             placeholder="Password" />
           </Form.Field>
         
