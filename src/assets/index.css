@@ -1,13 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
-
 :root {
   --border-radius: 15px;
   --main-color: blue;
   background-color: black;
-}
-
-h1 {
-  font-family: 'ballet';
 }
 
 body {

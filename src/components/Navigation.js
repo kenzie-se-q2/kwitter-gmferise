@@ -14,14 +14,18 @@ function Navigation (props) {
   };
 
   return(
-    <div className="navBar">
-      <div id="back-button">
-        <Button onClick={props.history.goBack}>Back</Button>
-      </div>
-      <div id="nav-link">
+    <div id="nav-bar">
+      <Button id="nav-back-button" onClick={props.history.goBack}>Back</Button>
+      <h1 className="site-title">Bitter</h1>
+      <div id="nav-buttons">
         <Link to="/">Home</Link>        
-        {user.token ? <a onClick={logout}>Logout</a> : <Link to="/login">Login</Link>}
-        <Link to="/signup">Create Account</Link>
+        {user.token ? 
+          <a onClick={logout}>Logout</a>
+          : (<>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Sign Up</Link>
+            </>)
+        }
       </div>
     </div>
   );

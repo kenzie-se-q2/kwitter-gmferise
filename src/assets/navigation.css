@@ -1,42 +1,46 @@
-.navBar{
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+
+#nav-bar{
     padding: 0 20px;
+
     display: flex;
-    position: relative;
-    height: 50px;
-    justify-content: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    height: 65px;
     background-color: #72afd3;
 }
 
-#nav-link {
-    display: flex;
-    height: 100%;
-}
-
-#nav-link a{
-    color: black;
-    padding:15.5px 10px;
-    height: max-content;
-}
-
-#nav-link a:hover, #back-button:hover {
-    background: #51646f;
-}
-
 #nav-buttons {
-    color: black;
-    padding:0;   
-    background-color: transparent;
-}
-
-#back-button {
-    position: absolute;
-    padding: 15px 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    
     height: 100%;
-    left: 0;
 }
 
-#back-button button {
-    padding: 0;
+#nav-buttons a:hover, #nav-back-button:hover {
+    background: #51646f;
+    cursor: pointer;
+}
+
+#nav-buttons a, #nav-back-button {
     color: black;
+    margin: 10px 10px;
+    padding: 1em;
+    height: max-content;
+    
     background-color: transparent;
+
+    border: 1px solid black;
+    border-radius: 1.5em;
+}
+
+h1.site-title {
+  font-family: 'La Belle Aurore' !important;
+  font-size: 48px;
+  line-height: 0.8;
+  margin: 0;
 }

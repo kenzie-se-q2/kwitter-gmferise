@@ -4,7 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 import { loginRequest } from '../apis/social';
 import { actions, useStore } from '../store/store';
 import { Button, Form } from 'semantic-ui-react';
-import '../assets/Login.css';
+import '../assets/login.css';
 
 function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
