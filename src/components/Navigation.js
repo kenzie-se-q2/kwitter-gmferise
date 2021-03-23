@@ -13,23 +13,18 @@ function Navigation (props) {
     logoutRequest(user.token).then(() => dispatch({ type: 'LOGOUT' }));
   };
 
-return(
+  return(
     <div className="navBar">
       <div id="back-button">
         <Button onClick={props.history.goBack}>Back</Button>
       </div>
       <div id="nav-link">
-        <Link to="/">Home</Link>
-
-        
-        
-        {user.token ? <a onClick={logout}> Logout </a> : <Link to="/login">Login </Link>}
-        
-
+        <Link to="/">Home</Link>        
+        {user.token ? <a onClick={logout}>Logout</a> : <Link to="/login">Login</Link>}
         <Link to="/signup">Create Account</Link>
       </div>
     </div>
-);
+  );
 }
 
 export default Navigation;
