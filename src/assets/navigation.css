@@ -64,6 +64,10 @@
 h1.site-title {
   font-family: 'La Belle Aurore' !important;
   font-size: 48px;
-  line-height: 0.8;
+  line-height: 2;
   margin: 0;
+  width: 200px;
+  height: 100%;
+  margin-left: 150px;
+  text-align: center;
 }

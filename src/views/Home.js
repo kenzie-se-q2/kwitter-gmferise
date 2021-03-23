@@ -3,7 +3,7 @@ import { useProtected } from '../store/store';
 import MessageList from '../components/MessageList';
 
 function Home(props) {
-  useProtected();
+  useProtected('Please sign in to start chatting!');
 
   return (
     <>

@@ -1,24 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import '../assets/navigation.css';
 import { useStore } from '../store/store';
 import { logoutRequest } from '../apis/social';
 
-function Navigation (props) {
+function Navigation () {
   const user = useStore((state) => state.user);
   const dispatch = useStore((state) => state.dispatch);
+  const history = useHistory();
 
-  const logout = (e) => {
-    logoutRequest(user.token).then(() => dispatch({ type: 'LOGOUT' }));
+  const logout = () => {
+    logoutRequest(user.token).then(() => {
+      history.push('/');
+      dispatch({ type: 'LOGOUT' });
+    });
   };
 
   return(
     <div id="nav-bar">
-      <Button id="nav-back-button" onClick={props.history.goBack}>Back</Button>
+      <Button id="nav-back-button" onClick={history.goBack}>Back</Button>
       <h1 className="site-title">Bitter</h1>
       <div id="nav-buttons">
-        <Link to="/">Home</Link>        
+        <Link to="/">Chat</Link>        
         {user.token ? 
           (<>
             <a onClick={logout}>Logout</a>  
