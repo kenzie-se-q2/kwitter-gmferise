@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 
 #nav-bar{
-    padding: 0 20px;
-
+    padding: 0 4px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -15,9 +14,9 @@
 #nav-buttons {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-end;
-    
+
     height: 100%;
 }
 
@@ -26,7 +25,20 @@
     cursor: pointer;
 }
 
-#nav-buttons a, #nav-back-button {
+#nav-buttons a {
+  color: black;
+  margin: 16px 0;
+  padding: calc(1em - 6px) calc(1em + 10px);
+  height: max-content;
+    
+  background-color: transparent;
+}
+
+#nav-buttons a:not(:last-child) {
+  border-right: 1px solid #5c829b;
+}
+
+#nav-back-button {
     color: black;
     margin: 10px 10px;
     padding: 1em;

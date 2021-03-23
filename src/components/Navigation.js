@@ -20,7 +20,11 @@ function Navigation (props) {
       <div id="nav-buttons">
         <Link to="/">Home</Link>        
         {user.token ? 
-          <a onClick={logout}>Logout</a>
+          (<>
+            <a onClick={logout}>Logout</a>  
+            <Link to="/profile">Edit Profile</Link>
+          </>)
+          
           : (<>
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
