@@ -1,21 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Grid, Segment } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
+import '../assets/navigation.css';
 
-function Navigation () {
-  return (
+function Navigation (props) {
+  return(
     <div className="navBar">
-        <Grid columns={3} doubling>
-          <Grid.Column width={3}>
-            <Segment><Container textAlign='center'><Link to="/">Home</Link></Container></Segment>
-          </Grid.Column>
-          <Grid.Column width={3}>
-            <Segment><Container textAlign='center'><Link to="/login">Login</Link></Container></Segment>
-          </Grid.Column>
-          <Grid.Column width={3}>
-            <Segment><Container textAlign='center'><Link to="/signup">Create Account</Link></Container></Segment>
-          </Grid.Column>
-        </Grid>
+      <div id="back-button">
+        <Button onClick={props.history.goBack}>Back</Button>
+      </div>
+      <div id="nav-link">
+        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Create Account</Link>
+      </div>
     </div>
   );
 }
