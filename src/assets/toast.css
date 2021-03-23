@@ -4,9 +4,37 @@
   width: 60vw;
   height: 15vh;
   left: 20vw;
-  top: 5vh;
+  bottom: 5vh;
   border-radius: 10px;
-  opacity: 0.5;
 
-  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0,0,0,0);
+  opacity: 0;
+
+  transition: opacity 400ms, background-color, 400ms;
+}
+
+.toast p {
+  font-size: 24px;
+  text-align: center;
+}
+
+.toast-show {
+  opacity: 1;
+  transition: opacity 800ms, background-color, 800ms;
+  background-color: #ffffff; /* default color */
+}
+
+/* make custom colors for other error codes here */
+.toast-400 {
+  background-color: #f35752;
+}
+
+.toast-200 {
+  background-color: #5dd45f
+  ;
 }

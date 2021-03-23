@@ -7,8 +7,8 @@ const initialState = {
   },
   messages: [],
   toast: {
-    text: '',
-    status: 0,
+    message: '',
+    statusCode: 0,
   },
 };
 
@@ -17,18 +17,33 @@ export const actions = {
   LOGIN: 'LOGIN',
   /** Log out the current user. No payload. */
   LOGOUT: 'LOGOUT',
-  /** Display a toast. Payload { String text, Number status } */
+  /** Display a toast. Payload { String message, Number statusCode } */
   TOAST: 'TOAST',
+  /** Clear the current toast. No payload. */
+  UNTOAST: 'UNTOAST',
 };
+
+const toastFor = (action, successMessage, successCode = 0) => ({
+  message: action.payload?.message || successMessage,
+  statusCode: action.payload?.statusCode || successCode
+});
 
 const reducer = (state, action) => {
   switch (action.type) {
     case actions.LOGIN:
-      return { user: action.payload };
+      return {
+        user: action.payload,
+        toast: toastFor(action, `Successfully logged in as ${action.payload.username}`)
+      };
     case actions.LOGOUT:
-      return { user: initialState.user };
+      return {
+        user: initialState.user,
+        toast: toastFor(action, 'Sign out successful', 200)
+      };
     case actions.TOAST:
-      return { toast: action.payload };
+      return { toast: { ...state.toast, ...action.payload } };
+    case actions.UNTOAST:
+      return { toast: initialState.toast };
     default:
       return state;
   }

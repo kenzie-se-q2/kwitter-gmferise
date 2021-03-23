@@ -4,19 +4,22 @@ import '../assets/toast.css';
 import { actions, useStore } from '../store/store';
 
 const Toast = () => {
-  const toast = useStore((state) => state.toast);
-  const visible = useState(false);
-  
-  const fadeClass = visible ? '' : '';
+  const dispatch = useStore((state) => state.dispatch);
+  const toast = useStore((state) => state.toast); 
+  const fadeClass = toast?.message ? 'toast-show' : '';
 
   // When the toast state changes
   useEffect(() => {
+    const anim = setTimeout(() => dispatch({ type: actions.UNTOAST }), 1500);
 
+    return () => {
+      clearTimeout(anim);
+    };
   }, [toast]);
 
   return (
-    <div className={`toast toast-${toast.status} ${fadeClass}`}>
-      {toast.text}
+    <div className={`toast toast-${toast.statusCode} ${fadeClass}`}>
+      <p>{toast.message}</p>
     </div>
   );
 };
