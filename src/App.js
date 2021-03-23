@@ -8,10 +8,12 @@ import Login from './views/Login';
 import NewAccount from './views/NewAccount';
 import Profile from "./views/Profile"
 import Navigation from './components/Navigation';
+import Toast from './components/Toast';
 
 function App() {
   return (
     <div className="App">
+      <Toast />
       <Route path="/" render={(routeProps) =>(
         <Navigation {...routeProps} />
       )} />

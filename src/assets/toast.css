@@ -1,0 +1,47 @@
+.toast {
+  position: absolute;
+  z-index: 100;
+  width: 60vw;
+  height: 15vh;
+  left: 20vw;
+  bottom: 5vh;
+  border-radius: 10px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0,0,0,0);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 400ms, background-color 400ms, visibility 400ms;
+}
+
+.toast p {
+  font-size: 3vh;
+  text-align: center;
+}
+
+.toast-show {
+  opacity: 1;
+  visibility: visible;
+  background-color: #ffffff; /* default color */
+  transition: opacity 800ms, background-color, 800ms, visibility 0ms;
+}
+
+/* make custom colors for other error codes here */
+.toast-400 {
+  background-color: #f35752;
+}
+
+.toast-200 {
+  background-color: #5dd45f
+  ;
+}
+
+.toast-100 {
+  background-color: #72afd3
+  ;
+}

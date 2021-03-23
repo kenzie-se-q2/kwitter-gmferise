@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 import '../assets/navigation.css';
 
 function Navigation (props) {
-return(
+  return(
     <div className="navBar">
       <div id="back-button">
         <Button onClick={props.history.goBack}>Back</Button>
@@ -15,7 +15,7 @@ return(
         <Link to="/signup">Create Account</Link>
       </div>
     </div>
-);
+  );
 }
 
 export default Navigation;
