@@ -78,18 +78,18 @@ export const createMessage = (message, token) => (
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({message})
+    body: JSON.stringify({ text: message })
   }).then((res) => res.json())
 );
 
-export const addLike = (messageId, token) => (
+export const addLike = (id, token) => (
   fetch(`${baseURL}likes`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
-    body: messageId
+    body: JSON.stringify( { messageId: id })
   }).then((res) => res.json())
 );
 
