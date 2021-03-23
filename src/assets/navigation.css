@@ -4,7 +4,7 @@
     position: relative;
     height: 50px;
     justify-content: center;
-    background-color: #718a98;
+    background-color: #72afd3;
 }
 
 #nav-link {
@@ -13,10 +13,9 @@
 }
 
 #nav-link a{
-    height: 100%;
     color: black;
-    padding: 10px;
-    margin: .5px;
+    padding:15.5px 10px;
+    height: max-content;
 }
 
 #nav-link a:hover, #back-button:hover {
