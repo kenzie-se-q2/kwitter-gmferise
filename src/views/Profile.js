@@ -1,10 +1,14 @@
 import React from 'react';
-import { Form, TextArea, Input, Button } from 'semantic-ui-react'
+import { useProtected, useStore } from '../store/store';
+import { Form, TextArea, Input, Button } from 'semantic-ui-react';
 
 
 function Profile () {
-    return(
-<div className="profile">
+  const user = useStore((state) => state.user);
+  useProtected('You must be signed in to edit your profile');
+
+  return(
+  <div className="profile">
     <h1>Edit Profile</h1>
     <div className="pic"><button><img /></button></div>
     <Button basic color='red'>
@@ -35,7 +39,7 @@ function Profile () {
       </Form>
 
     </div>
-    )
+  );
 }
 
-export default Profile
+export default Profile;
