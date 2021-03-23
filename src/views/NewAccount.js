@@ -57,7 +57,7 @@ const NewAccount = (props) => {
             autoFocus
             required
             onChange={handleChange}
-            pattern= ".{1,}"
+            pattern= ".{3,}"
             placeholder="Display Name" />
           </Form.Field>
           <Form.Field>
