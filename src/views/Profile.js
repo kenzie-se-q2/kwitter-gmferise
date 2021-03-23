@@ -26,11 +26,11 @@ function Profile() {
         <Form id="update-user">
           <Form.Field>
             <h4>Display Name</h4>
-            <Input placeholder="Display Name" />
+            <Input placeholder="Display Name" pattern="{1,}"/>
           </Form.Field>
           <Form.Field>
             <h4>About Me</h4>
-            <TextArea placeholder="About" />
+            <TextArea placeholder="About" pattern="{1,}"/>
           </Form.Field>
           <Button type="submit">Update Profile Info</Button>
         </Form>
@@ -40,11 +40,15 @@ function Profile() {
       <Form>
         <Form.Field>
           <h4>Current Password</h4>
-          <Input placeholder="Current Password" type="password" />
+          <Input placeholder="Current Password" 
+          type="password" 
+          pattern= "{3,}"
+          />
         </Form.Field>
         <Form.Field>
           <h4>New Password</h4>
-          <Input placeholder="New Password" type="password" />
+          
+          <Input placeholder="New Password" type="password" pattern="{3,}"/>
         </Form.Field>
         <Button type="submit">Update Password</Button>
       </Form>
