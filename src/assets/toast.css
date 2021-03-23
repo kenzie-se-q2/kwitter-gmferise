@@ -14,19 +14,21 @@
 
   background-color: rgba(0,0,0,0);
   opacity: 0;
+  visibility: hidden;
 
-  transition: opacity 400ms, background-color, 400ms;
+  transition: opacity 400ms, background-color 400ms, visibility 400ms;
 }
 
 .toast p {
-  font-size: 24px;
+  font-size: 3vh;
   text-align: center;
 }
 
 .toast-show {
   opacity: 1;
-  transition: opacity 800ms, background-color, 800ms;
+  visibility: visible;
   background-color: #ffffff; /* default color */
+  transition: opacity 800ms, background-color, 800ms, visibility 0ms;
 }
 
 /* make custom colors for other error codes here */
