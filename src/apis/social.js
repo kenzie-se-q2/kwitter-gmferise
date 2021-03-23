@@ -112,3 +112,9 @@ export const deleteMessage = (messageId, token) => (
     headers: {Authorization: `Bearer ${token}`}
   }).then((res) => res.json())
 );
+
+export const getUser = (username) => (
+  fetch(`${baseURL}users/${username}`, {
+    method: 'GET',
+  }).then((res) => res.json())
+);
