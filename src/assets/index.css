@@ -27,6 +27,7 @@ code {
 .App {
   height: 99vh;
   border: var(--border);
+  background-color: #7a7474;
 }
 .colorbg{
   height:100vh;
