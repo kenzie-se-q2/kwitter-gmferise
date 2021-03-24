@@ -69,7 +69,7 @@ export const useProtected = (toastMessage = 'You must be signed in to view this 
 
   useEffect(() => {
     if (!user.token) {
-      dispatch({ type: actions.TOAST, payload: { message: toastMessage , statusCode: 100 } });
+      dispatch({ type: actions.TOAST, payload: { message: toastMessage , statusCode: 1 } });
       history.replace('/login');
     }
   }, [user]);
