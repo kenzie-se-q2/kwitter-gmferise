@@ -23,6 +23,10 @@ export const actions = {
   TOAST: 'TOAST',
   /** Clear the current toast. No payload. */
   UNTOAST: 'UNTOAST',
+  /** Set the message list. Payload is an array of messages. */
+  UPDATE_MESSAGES: 'UPDATE_MESSAGES',
+  /** Reset the message lsit. No payload. */
+  RESET_MESSAGES: 'RESET_MESSAGES',
 };
 
 const toastFor = (action, successMessage, successCode = 0) => ({
@@ -46,6 +50,10 @@ const reducer = (state, action) => {
       return { toast: { ...state.toast, ...action.payload } };
     case actions.UNTOAST:
       return { toast: initialState.toast };
+    case actions.UPDATE_MESSAGES:
+      return { messages: action.payload };
+    case actions.RESET_MESSAGES:
+      return { messages: initialState.messages };
     default:
       return state;
   }
