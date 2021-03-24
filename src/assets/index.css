@@ -22,6 +22,7 @@ code {
   height: 99vh;
   border: var(--border);
   background-color: #7a7474;
+  overflow: hidden;
 }
 .colorbg{
   height:100vh;
