@@ -12,7 +12,7 @@ function Navigation () {
 
   const logout = () => {
     logoutRequest(user.token).then(() => {
-      history.push('/');
+      history.push('/login');
       dispatch({ type: 'LOGOUT' });
     });
   };
@@ -22,11 +22,11 @@ function Navigation () {
       <Button id="nav-back-button" onClick={history.goBack}>Back</Button>
       <h1 className="site-title">Bitter</h1>
       <div id="nav-buttons">
-        <Link to="/">Chat</Link>        
         {user.token ? 
           (<>
-            <a onClick={logout}>Logout</a>  
+            <Link to="/">Chat</Link>
             <Link to="/profile">Edit Profile</Link>
+            <a onClick={logout}>Logout</a>  
           </>)
           
           : (<>
