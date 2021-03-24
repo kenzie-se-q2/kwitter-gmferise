@@ -28,16 +28,34 @@ function Profile () {
         <hr></hr>
       <Form>
           <Form.Field>
-          <h4>Current Password</h4>
-        <Input placeholder='Type Here' type="password" />
+            <h4>Display Name</h4>
+            <Input placeholder="Display Name" pattern=".{3,}"/>
           </Form.Field>
           <Form.Field>
-          <h4>New Password</h4>
-          <Input placeholder='Type Here' type="password" />
+            <h4>About Me</h4>
+            <TextArea placeholder="About" />
           </Form.Field>
-          <Button type='submit'>Update Password</Button>
+          <Button type="submit">Update Profile Info</Button>
+        </Form>
+      </div>
+      <hr />
+      <div className="password-form">
+      <Form>
+        <Form.Field>
+          <h4>Current Password</h4>
+          <Input placeholder="Current Password" 
+          type="password" 
+          pattern= ".{3,}"
+          />
+        </Form.Field>
+        <Form.Field>
+          <h4>New Password</h4>
+          
+          <Input placeholder="New Password" type="password" pattern=".{3,}"/>
+        </Form.Field>
+        <Button type="submit">Update Password</Button>
       </Form>
-
+      </div>
     </div>
   );
 }

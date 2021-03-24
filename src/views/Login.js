@@ -42,6 +42,8 @@ function Login(props) {
             autoFocus
             required
             onChange={handleChange}
+            pattern =".{3,}" 
+            
           />
         </Form.Field>
         <Form.Field>

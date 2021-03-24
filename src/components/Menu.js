@@ -19,7 +19,7 @@ function Menu(props) {
         {user.token && <button type="button" onClick={logout}>Logout</button>}
       </div>
     </div>
-  );
+  ); 
 }
 
 export default Menu;
