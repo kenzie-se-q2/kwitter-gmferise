@@ -40,7 +40,7 @@ const reducer = (state, action) => {
     case actions.LOGOUT:
       return {
         user: initialState.user,
-        toast: toastFor(action, 'Sign out successful', 200)
+        toast: toastFor(action, 'Log out successful', 200)
       };
     case actions.TOAST:
       return { toast: { ...state.toast, ...action.payload } };
