@@ -37,9 +37,8 @@ export const updateUser = (username, password, displayName, about, token) => (
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      password,
-      displayName,
-      about,
+      ...{ displayName, about },
+      ...(password ? { password } : {})
     }),
   }).then((res) => res.json())
 );

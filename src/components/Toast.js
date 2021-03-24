@@ -10,7 +10,10 @@ const Toast = () => {
 
   // When the toast state changes
   useEffect(() => {
-    const anim = setTimeout(() => dispatch({ type: actions.UNTOAST }), 1500);
+    let anim = null;
+    if (toast.message) {
+      anim = setTimeout(() => dispatch({ type: actions.UNTOAST }), 1500);
+    }
 
     return () => {
       clearTimeout(anim);
