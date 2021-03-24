@@ -1,42 +1,73 @@
-.navBar{
-    padding: 0 20px;
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+
+#nav-bar{
+    padding: 0 4px;
     display: flex;
-    position: relative;
-    height: 50px;
-    justify-content: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    height: 65px;
     background-color: #72afd3;
 }
 
-#nav-link {
-    display: flex;
-    height: 100%;
-}
-
-#nav-link a{
-    color: black;
-    padding:15.5px 10px;
-    height: max-content;
-}
-
-#nav-link a:hover, #back-button:hover {
-    background: #51646f;
-}
-
 #nav-buttons {
-    color: black;
-    padding:0;   
-    background-color: transparent;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+    margin: 16px 0;
+    height: min-content;
 }
 
-#back-button {
-    position: absolute;
-    padding: 15px 30px;
-    height: 100%;
-    left: 0;
+#nav-buttons a:hover, #nav-back-button:hover {
+    background: #51646f;
+    cursor: pointer;
 }
 
-#back-button button {
-    padding: 0;
+#nav-buttons a {
+  color: black;
+  padding: calc(1em - 6px) calc(1em + 10px);
+  height: max-content;
+  background-clip: padding-box;
+    
+  background-color: transparent;
+}
+
+#nav-buttons a:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#nav-buttons a:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#nav-buttons a:not(:last-child) {
+  border-right: 1px solid #5c829b;
+}
+
+#nav-back-button {
     color: black;
+    margin: 10px 10px;
+    padding: 1em;
+    height: max-content;
+    
     background-color: transparent;
+
+    border: 1px solid black;
+    border-radius: 1.5em;
+}
+
+h1.site-title {
+  font-family: 'La Belle Aurore' !important;
+  font-size: 48px;
+  line-height: 2;
+  margin: 0;
+  width: 200px;
+  height: 100%;
+  margin-left: 150px;
+  text-align: center;
 }

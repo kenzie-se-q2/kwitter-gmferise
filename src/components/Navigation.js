@@ -1,27 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import '../assets/navigation.css';
 import { useStore } from '../store/store';
 import { logoutRequest } from '../apis/social';
 
-function Navigation (props) {
+function Navigation () {
   const user = useStore((state) => state.user);
   const dispatch = useStore((state) => state.dispatch);
+  const history = useHistory();
 
-  const logout = (e) => {
-    logoutRequest(user.token).then(() => dispatch({ type: 'LOGOUT' }));
+  const logout = () => {
+    logoutRequest(user.token).then(() => {
+      history.push('/login');
+      dispatch({ type: 'LOGOUT' });
+    });
   };
 
   return(
-    <div className="navBar">
-      <div id="back-button">
-        <Button onClick={props.history.goBack}>Back</Button>
-      </div>
-      <div id="nav-link">
-        <Link to="/">Home</Link>        
-        {user.token ? <a onClick={logout}>Logout</a> : <Link to="/login">Login</Link>}
-        <Link to="/signup">Create Account</Link>
+    <div id="nav-bar">
+      <Button id="nav-back-button" onClick={history.goBack}>Back</Button>
+      <h1 className="site-title">Bitter</h1>
+      <div id="nav-buttons">
+        {user.token ? 
+          (<>
+            <Link to="/">Chat</Link>
+            <Link to="/profile">Edit Profile</Link>
+            <a onClick={logout}>Logout</a>  
+          </>)
+          
+          : (<>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Sign Up</Link>
+            </>)
+        }
       </div>
     </div>
   );

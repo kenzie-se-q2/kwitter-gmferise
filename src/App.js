@@ -6,7 +6,7 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Login from './views/Login';
 import NewAccount from './views/NewAccount';
-import Profile from "./views/Profile"
+import Profile from './views/Profile';
 import Navigation from './components/Navigation';
 import Toast from './components/Toast';
 
@@ -14,9 +14,7 @@ function App() {
   return (
     <div className="App">
       <Toast />
-      <Route path="/" render={(routeProps) =>(
-        <Navigation {...routeProps} />
-      )} />
+      <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />

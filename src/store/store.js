@@ -1,3 +1,5 @@
+import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
 import create from 'zustand';
 import { devtools, redux } from 'zustand/middleware';
 
@@ -51,3 +53,16 @@ const reducer = (state, action) => {
 
 // Create useStore hook
 export const useStore = create(devtools(redux(reducer, initialState)));
+
+// Create protected page hook
+export const useProtected = (toastMessage = 'You must be signed in to view this page') => {
+  const { dispatch, user } = useStore();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!user.token) {
+      dispatch({ type: actions.TOAST, payload: { message: toastMessage , statusCode: 100 } });
+      history.replace('/login');
+    }
+  }, [user]);
+};
