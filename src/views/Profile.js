@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Form,
   TextArea,
@@ -6,10 +7,64 @@ import {
   Button,
 } from 'semantic-ui-react';
 import '../assets/editProfile.css';
-import { useProtected } from '../store/store';
+import { actions, useProtected, useStore } from '../store/store';
+import { updateUser, deleteUser, getUser, logoutRequest } from '../apis/social';
 
 function Profile() {
+  const user = useStore((state) => state.user);
+  const dispatch = useStore((state) => state.dispatch);
+  const history = useHistory();
+  const [formData, setFormData] = useState({
+    displayName: '',
+    about: '',
+    password: '',
+  });
+
   useProtected('You must be signed in to edit your profile');
+
+  const syncFormToApi = () => {
+    if (user.username)
+      getUser(user.username).then((userData) => {
+          setFormData((prev) => ({
+            ...prev,
+            displayName: userData.user.displayName,
+            about: userData.user.about,
+            password: '',
+          }));
+      });
+  };
+
+  useEffect(syncFormToApi, [user]);
+
+  const updateForm = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    updateUser(user.username, formData.password, formData.displayName, formData.about, user.token)
+      .then(() => {
+        syncFormToApi();
+        dispatch({ type: actions.TOAST, payload: { message: 'Successfully updated profile', statusCode: 200 } });
+      });
+  };
+
+  const handleDelete = (event) => {
+    deleteUser(user.username, user.token)
+      .then((response) => {
+        if (response.statusCode === 200) {
+          history.push('/login');
+          dispatch({ type: actions.LOGOUT });
+          dispatch({ type: actions.TOAST, payload: { message: 'Account successfully deleted', statusCode: 2 } });
+        }
+      });
+  };
+  
   return (
     <div className="profile">
       <h1>Edit Profile</h1>
@@ -19,40 +74,45 @@ function Profile() {
         </button>
       </div>
       <div id="delete-button">
-        <Button basic color="red">
-          Delete User
+        <Button basic color="red" type="button" onClick={handleDelete}>
+          Delete Account
         </Button>
       </div>
       <div className="profile-form">
-        <Form id="update-user">
+        <Form id="update-user" onSubmit={submitForm}>
           <Form.Field>
-            <h4>Display Name</h4>
-            <Input placeholder="Display Name" pattern=".{3,}"/>
+            <label>Display Name *</label>
+            <Input
+              name="displayName"
+              placeholder="Display Name"
+              value={formData.displayName}
+              required
+              pattern=".{3,}"
+              onChange={updateForm}
+            />
           </Form.Field>
           <Form.Field>
-            <h4>About Me</h4>
-            <TextArea placeholder="About" />
+            <label>About Me *</label>
+            <TextArea
+              name="about"
+              placeholder="About"
+              required
+              value={formData.about}
+              onChange={updateForm}
+            />
           </Form.Field>
-          <Button type="submit">Update Profile Info</Button>
+          <Form.Field>
+            <label>New Password (Optional)</label>
+            <Input placeholder="New Password" 
+              name="password"
+              value={formData.password}
+              type="password" 
+              pattern= ".{3,}"
+              onChange={updateForm}
+            />
+          </Form.Field>
+          <Button type="submit">Update Profile</Button>
         </Form>
-      </div>
-      <hr />
-      <div className="password-form">
-      <Form>
-        <Form.Field>
-          <h4>Current Password</h4>
-          <Input placeholder="Current Password" 
-          type="password" 
-          pattern= ".{3,}"
-          />
-        </Form.Field>
-        <Form.Field>
-          <h4>New Password</h4>
-          
-          <Input placeholder="New Password" type="password" pattern=".{3,}"/>
-        </Form.Field>
-        <Button type="submit">Update Password</Button>
-      </Form>
       </div>
     </div>
   );

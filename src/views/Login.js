@@ -20,7 +20,7 @@ function Login(props) {
     event.preventDefault();
     loginRequest(formData.username, formData.password).then((userData) => {
       dispatch({ type: actions.LOGIN, payload: userData });
-      history.push('/');
+      if (userData.statusCode === 200) history.push('/');
     });
   };
 
