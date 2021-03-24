@@ -1,16 +1,15 @@
 // TODO: Create a MessageList to display messages
 import MessageItem from './MessageItem';
+import { useStore } from '../store/store';
 
 function MessageList(props) {
+  const msg = useStore((state) => state.messages);
+
   return (
-    <div id="message-container">
-      <MessageItem message="this like a tweet"
-      username="zombisquad" 
-      displayName="zombisquad"
-      likeCount={13}/>
-      <MessageItem username="Naseer" displayName="Naseer"
-      message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
-      <MessageItem />
+    <div className="MsgList">
+  {msg.map(m => (
+    <MessageItem {...m} key={m.id} />
+  ))}
     </div>
   );
 }
