@@ -29,7 +29,7 @@ function Messages (props) {
 
   const toggleLike = () => {
     return isLiked ?
-      removeLike(props.likes.find((like) => like.username === user.username).id, user.token)
+      removeLike(like.id, user.token)
       : addLike(props.id, user.token);
   };
 
