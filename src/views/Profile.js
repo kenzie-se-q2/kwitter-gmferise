@@ -8,7 +8,7 @@ import {
 } from 'semantic-ui-react';
 import '../assets/editProfile.css';
 import { actions, useProtected, useStore } from '../store/store';
-import { updateUser, deleteUser, getUser, logoutRequest, } from '../apis/social';
+import { updateUser, deleteUser, getUser } from '../apis/social';
 import ProfilePicture from '../components/ProfilePicture';
 
 function Profile() {
@@ -56,7 +56,7 @@ function Profile() {
       });
   };
 
-  const handleDelete = (event) => {
+  const handleDelete = () => {
     deleteUser(user.username, user.token)
       .then((response) => {
         if (response.statusCode === 200) {
@@ -90,11 +90,10 @@ function Profile() {
             />
           </Form.Field>
           <Form.Field>
-            <label>About Me *</label>
+            <label>About Me (Optional)</label>
             <TextArea
               name="about"
               placeholder="About"
-              required
               value={formData.about}
               onChange={updateForm}
             />

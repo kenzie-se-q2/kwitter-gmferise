@@ -2,14 +2,14 @@
 import MessageItem from './MessageItem';
 import { useStore } from '../store/store';
 
-function MessageList(props) {
+function MessageList() {
   const msg = useStore((state) => state.messages);
 
   return (
     <div className="MsgList">
-  {msg.map(m => (
-    <MessageItem {...m} key={m.id} />
-  ))}
+      {msg.map(m => (
+        <MessageItem {...m} key={m.id} likeCount={m.likes.length}/>
+      ))}
     </div>
   );
 }

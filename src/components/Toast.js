@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../assets/toast.css';
 
 import { actions, useStore } from '../store/store';

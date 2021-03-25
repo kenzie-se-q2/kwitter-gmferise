@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { Redirect, Link, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { loginRequest } from '../apis/social';
 import { actions, useStore } from '../store/store';
 import { Button, Form } from 'semantic-ui-react';
 import '../assets/login.css';
 
-function Login(props) {
+function Login() {
   const dispatch = useStore((state) => state.dispatch);
-  const user = useStore((state) => state.user);
   const history = useHistory();
 
   const [formData, setFormData] = useState({

@@ -1,4 +1,4 @@
-const baseURL = 'https://kwitter-api-b.herokuapp.com/';
+export const baseURL = 'https://socialapp-api.herokuapp.com/';
 
 export const loginRequest = (username, password) => (
   fetch(`${baseURL}auth/login`, {
@@ -67,7 +67,7 @@ export const getPicture = (username) => (
   fetch(`${baseURL}users/${username}/picture`, {
     method: 'GET',
   }).then((res) => {
-    if(res.statusCode) {
+    if(!res.ok) {
       return null;
     } 
     return res.blob();
