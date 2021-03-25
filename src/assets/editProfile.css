@@ -43,3 +43,16 @@ hr{
     width: 450px;
     margin: auto;
 }
+
+.currentImage{
+    margin: auto;
+    margin-bottom: 20px;
+    width: max-content;
+}
+
+.currentImage img{
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+    width: 300px;
+}

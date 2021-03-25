@@ -8,7 +8,8 @@ import {
 } from 'semantic-ui-react';
 import '../assets/editProfile.css';
 import { actions, useProtected, useStore } from '../store/store';
-import { updateUser, deleteUser, getUser, logoutRequest } from '../apis/social';
+import { updateUser, deleteUser, getUser, logoutRequest, } from '../apis/social';
+import ProfilePicture from '../components/ProfilePicture';
 
 function Profile() {
   const user = useStore((state) => state.user);
@@ -18,8 +19,9 @@ function Profile() {
     displayName: '',
     about: '',
     password: '',
+    picture: '',
   });
-
+  
   useProtected('You must be signed in to edit your profile');
 
   const syncFormToApi = () => {
@@ -68,11 +70,7 @@ function Profile() {
   return (
     <div className="profile">
       <h1>Edit Profile</h1>
-      <div className="pic">
-        <button>
-          <img />
-        </button>
-      </div>
+      <ProfilePicture />
       <div id="delete-button">
         <Button basic color="red" type="button" onClick={handleDelete}>
           Delete Account

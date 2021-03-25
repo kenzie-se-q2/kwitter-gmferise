@@ -50,7 +50,7 @@ export const deleteUser = (username, token) => (
   }).then((res) => res.json())
 );
 
-export const setPicture = (username, pictureData, token) => {
+export const putPicture = (username, pictureData, token) => {
   let formData = new FormData();
   formData.append('picture', pictureData);
 
@@ -58,7 +58,6 @@ export const setPicture = (username, pictureData, token) => {
     method: 'PUT',
     headers: { 
       Authorization: `Bearer ${token}`,
-      'Content-Type': 'multipart/form-data'
   },
     body: formData,
   }).then((res) => res.json());
@@ -67,7 +66,13 @@ export const setPicture = (username, pictureData, token) => {
 export const getPicture = (username) => (
   fetch(`${baseURL}users/${username}/picture`, {
     method: 'GET',
-  }).then((res) => res.json())
+  }).then((res) => {
+    if(res.statusCode) {
+      return null;
+    } 
+    return res.blob();
+  })
+  .then((blob) => blob ? URL.createObjectURL(blob) : null)
 );
 
 export const createMessage = (message, token) => (
