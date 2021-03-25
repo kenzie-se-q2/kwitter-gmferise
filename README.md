@@ -10,5 +10,8 @@ See my.kenzie.academy for details.
 ## Credits and References
 
 Team Members:
-
-References
+* Gavin Ferise
+* Sebastian Caudill
+* Cedrick Randolph
+* Siddiq Douglas
+* Ryan Detzler

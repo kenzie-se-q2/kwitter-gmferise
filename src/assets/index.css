@@ -19,7 +19,7 @@ code {
 }
 
 .App {
-  height: 99vh;
+  height: 100vh;
   border: var(--border);
   background-color: #7a7474;
   overflow: hidden;

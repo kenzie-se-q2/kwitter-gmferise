@@ -6,7 +6,7 @@ import { useStore, actions } from '../store/store';
 function ProfilePicture() {
   const dispatch = useStore((state) => state.dispatch);
   const user = useStore((state) => state.user);
-  const [image, setImage] = useState(`https://via.placeholder.com/150`);
+  const [image, setImage] = useState('./default.png');
   const handleSubmitPhoto = (e) => {
     if(e.target.files.length)
     putPicture(user.username, e.target.files[0], user.token)

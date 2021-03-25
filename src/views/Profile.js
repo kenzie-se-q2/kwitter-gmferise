@@ -90,11 +90,10 @@ function Profile() {
             />
           </Form.Field>
           <Form.Field>
-            <label>About Me *</label>
+            <label>About Me (Optional)</label>
             <TextArea
               name="about"
               placeholder="About"
-              required
               value={formData.about}
               onChange={updateForm}
             />

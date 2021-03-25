@@ -7,9 +7,9 @@ function MessageList(props) {
 
   return (
     <div className="MsgList">
-  {msg.map(m => (
-    <MessageItem {...m} key={m.id} />
-  ))}
+      {msg.map(m => (
+        <MessageItem {...m} key={m.id} likeCount={m.likes.length}/>
+      ))}
     </div>
   );
 }

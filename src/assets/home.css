@@ -1,0 +1,41 @@
+.home-view {
+  overflow: scroll;
+  height: 100vh;
+}
+
+.draftbox {
+  position: sticky !important;
+
+  width: 100vw !important;
+  padding: 20px;
+  bottom: 50px;
+  left: 0;
+
+  z-index: 200;
+
+  background-color: #72afd3;
+  border-radius: 5px;
+}
+
+.draftbox .field {
+  width: 50vw !important;
+  margin: auto !important;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.draftbox .field .button {
+  height: 3em !important;
+  margin-left: 20px;
+}
+
+.liked {
+  color: #31b7ec !important;
+}
+
+.MsgList {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
