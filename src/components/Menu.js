@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { useStore } from '../store/store';
 import { logoutRequest } from '../apis/social';
 
-function Menu(props) {
+function Menu() {
   const user = useStore((state) => state.user);
   const dispatch = useStore((state) => state.dispatch);
 
-  const logout = (e) => {
+  const logout = () => {
     logoutRequest(user.token).then(() => dispatch({ type: 'LOGOUT' }));
   };
 

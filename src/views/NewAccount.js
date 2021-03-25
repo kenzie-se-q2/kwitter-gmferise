@@ -5,7 +5,7 @@ import { createUser, loginRequest } from '../apis/social';
 import { actions, useStore } from '../store/store';
 import '../assets/newaccount.css';
 
-const NewAccount = (props) => {
+const NewAccount = () => {
   const dispatch = useStore((state) => state.dispatch);
   const user = useStore((state) => state.user);
 
@@ -79,8 +79,7 @@ const NewAccount = (props) => {
         </Form>
       </div>
     </div>
-
-);
+  );
 };
 
 export default NewAccount;

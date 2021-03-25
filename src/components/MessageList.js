@@ -2,7 +2,7 @@
 import MessageItem from './MessageItem';
 import { useStore } from '../store/store';
 
-function MessageList(props) {
+function MessageList() {
   const msg = useStore((state) => state.messages);
 
   return (

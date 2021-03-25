@@ -4,11 +4,9 @@ import { getMessageList, createMessage } from '../apis/social';
 import MessageList from '../components/MessageList';
 import { Form, Button, TextArea } from 'semantic-ui-react';
 import '../assets/home.css';
-import create from 'zustand/vanilla';
 import Polling from '../store/polling';
 
-function Home(props) {
-  const messages = useStore((state) => state.messages);
+function Home() {
   const user = useStore((state) => state.user);
   const dispatch = useStore((state) => state.dispatch);
   const [draft, setDraft] = useState('');

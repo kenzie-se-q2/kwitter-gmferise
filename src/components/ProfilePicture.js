@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'semantic-ui-react';
 import { putPicture, getPicture } from '../apis/social';
 import { useStore, actions } from '../store/store';
 

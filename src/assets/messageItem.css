@@ -1,5 +1,5 @@
 #message{
-    display:flex;
+    display: flex;
     margin-top: 10px;
     width: 80%;
     background-color: #936756;
@@ -32,12 +32,8 @@
     padding: 5px 15px;
     transform: translateY(-15px);
     margin-left: 75px;
-    width: fit-content;
     border-radius: 5px;
-}
-
-#content p {
-    width: fit-content;
+    word-wrap: break-word;
 }
 
 #like-button{

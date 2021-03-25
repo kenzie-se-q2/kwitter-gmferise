@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Message, TextArea, Button, Icon, Label } from 'semantic-ui-react';
+import { Message, Button, Icon, Label } from 'semantic-ui-react';
 import '../assets/messageItem.css';
 import { getUser, baseURL, addLike, removeLike } from '../apis/social';
 import { useStore } from '../store/store';
