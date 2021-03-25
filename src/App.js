@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
 import 'semantic-ui-css/semantic.min.css';
 
@@ -12,7 +12,7 @@ import Toast from './components/Toast';
 
 function App() {
   const history = useHistory();
-  window.show404 = () => history.push('/');
+  window.show404 = () => history.push('/404');
   return (
     <div className="App">
       <Toast />
