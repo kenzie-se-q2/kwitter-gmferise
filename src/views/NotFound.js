@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../assets/notFound.css';
 
 function NotFound(props) {
   return (
-    <>
-      <p>Page not found for {props.location.pathname}</p>
-      <Link to="/">Go Home</Link>
-    </>
+    <div id="error-page">
+      <img src="https://cdn.dribbble.com/users/722246/screenshots/3066818/404-page.gif"/>
+    </div>
   );
 }
 

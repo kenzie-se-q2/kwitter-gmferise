@@ -1,0 +1,11 @@
+#error-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+#error-page img {
+    height: 100%;
+    display: block;
+    margin: auto;
+}
