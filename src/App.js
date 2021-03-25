@@ -20,6 +20,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={NewAccount} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>   
     </div>
