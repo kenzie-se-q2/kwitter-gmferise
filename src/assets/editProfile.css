@@ -1,6 +1,8 @@
 .profile {
     padding: 10px;
-    position: relative;
+    padding-bottom: 100px;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .profile > h1 {
@@ -19,8 +21,8 @@
     position: absolute;
     margin: 10px;
     width: fit-content;
-    top: 0;
-    right: 0;
+    top: 70px;
+    right: 10px;
     border-radius: 5px;
 }
 
