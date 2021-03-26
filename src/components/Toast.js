@@ -12,7 +12,7 @@ const Toast = () => {
   useEffect(() => {
     let anim = null;
     if (toast.message) {
-      anim = setTimeout(() => dispatch({ type: actions.UNTOAST }), 1500);
+      anim = setTimeout(() => dispatch({ type: actions.UNTOAST }), 2000);
     }
 
     return () => {

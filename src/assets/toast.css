@@ -16,7 +16,7 @@
   opacity: 0;
   visibility: hidden;
 
-  transition: opacity 400ms, background-color 400ms, visibility 400ms;
+  transition: opacity 1000ms, background-color 1000ms, visibility 1000ms;
 }
 
 .toast p {
@@ -28,7 +28,7 @@
   opacity: 1;
   visibility: visible;
   background-color: #ffffff; /* default color */
-  transition: opacity 800ms, background-color, 800ms, visibility 0ms;
+  transition: opacity 1000ms, background-color, 1000ms, visibility 0ms;
 }
 
 /* make custom colors for other error codes here */
