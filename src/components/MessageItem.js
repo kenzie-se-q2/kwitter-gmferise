@@ -21,8 +21,8 @@ function Messages (props) {
     getUser(props.username).then((response) => {
       if (response.statusCode === 200)
         setUserData((prev) => ({
-          displayName: response.user.displayName,
-          picture: response.user.pictureLocation ? baseURL.slice(0, -1) + response.user.pictureLocation : prev.picture,
+          displayName: response.user?.displayName || prev.displayName,
+          picture: response.user?.pictureLocation ? baseURL.slice(0, -1) + response.user.pictureLocation : prev.picture,
         }));
     });
   }, []);
