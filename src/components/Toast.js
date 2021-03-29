@@ -28,3 +28,8 @@ const Toast = () => {
 };
 
 export default Toast;
+
+{/* <!-- ////////////////////////////////////////////////////////////
+  This is very nicely handled. Error handling is one of my favorite things 
+  to work on in a project. It takes each project to the next level.
+//////////////////////////////////////////////////////////// --> */}

@@ -21,6 +21,11 @@ function Home() {
     });
   };
 
+{/* <!-- ////////////////////////////////////////////////////////////
+  Since you already have toasts created, why not use an else in the above function
+  in case the server goes down or something to that affect.
+//////////////////////////////////////////////////////////// --> */}
+
   const poll = Polling.usePolling(5000, getNewMessages);
 
   const handleChange = (event) => {

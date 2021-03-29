@@ -59,6 +59,12 @@ const reducer = (state, action) => {
   }
 };
 
+{/* <!-- ////////////////////////////////////////////////////////////
+  The toast logic you've created throughout the project could be replicated to create
+  a 'loader'. Typically a loader is a place holder for while the fetch is happening.
+  There would be an additional dispatch and action before the fetch call,
+  then onces the fetch completes the loader would be set back to false.
+//////////////////////////////////////////////////////////// --> */}
 // Create useStore hook
 export const useStore = create(devtools(redux(reducer, initialState)));
 
