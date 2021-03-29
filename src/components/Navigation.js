@@ -20,6 +20,10 @@ function Navigation () {
   return(
     <div id="nav-bar">
       <Button id="nav-back-button" onClick={history.goBack}>Back</Button>
+{/* <!-- ////////////////////////////////////////////////////////////
+Nice use of history. This is used frequently in native React Apps to 
+mimick websites. It's a wonderful thing to study.
+//////////////////////////////////////////////////////////// --> */}
       <h1 className="site-title">Bitter</h1>
       <div id="nav-buttons">
         {user.token ? 

@@ -57,6 +57,11 @@ function Profile() {
   };
 
   const handleDelete = () => {
+{/* <!-- ////////////////////////////////////////////////////////////
+Giving the user the ability to confirm or deny before deleting is preferable.
+If their child or cat is playing at the computer keyboard, we don't want it to be 
+just a click away for their account to be fully deleted.
+//////////////////////////////////////////////////////////// --> */}
     deleteUser(user.username, user.token)
       .then((response) => {
         if (response.statusCode === 200) {
@@ -77,6 +82,10 @@ function Profile() {
         </Button>
       </div>
       <div className="profile-form">
+{/* <!-- ////////////////////////////////////////////////////////////
+Having a profile page to show this information that is different that form would 
+be a nice additional feature to your webpage.
+//////////////////////////////////////////////////////////// --> */}
         <Form id="update-user" onSubmit={submitForm}>
           <Form.Field>
             <label>Display Name *</label>
